@@ -10,7 +10,6 @@ export default function ResultSection({ result }) {
         <p className="text-2xl font-bold text-primary mb-2">{result.predicted_class}</p>
         <p className="text-base">Tingkat kepercayaan: <strong>{result.confidence}%</strong></p>
       </div>
-      <img src={result.image_url} alt="Hasil Analisis" className="mx-auto rounded-lg max-h-64 object-contain" />
     </div>
   );
 }
