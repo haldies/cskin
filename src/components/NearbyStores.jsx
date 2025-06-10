@@ -41,9 +41,9 @@ function NearbyStores() {
   }, []);
 
   return (
-    <div className="max-w-xl mx-auto p-6 rounded-3xl shadow-lg bg-white">
+    <div className="rounded-3xl shadow-lg bg-white">
       <h2
-        className="text-3xl font-extrabold mb-6 text-center"
+        className="text-xl font-extrabold mb-6"
         style={{ color: "var(--color-primary)", fontFamily: "'Poppins', sans-serif" }}
       >
         Toko Terdekat

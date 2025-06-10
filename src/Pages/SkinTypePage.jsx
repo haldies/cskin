@@ -34,7 +34,6 @@ function SkinTypePage() {
         <ResultSection result={result} />
         <SkincareRoadmap />
       </main>
-      <NearbyStores/>
       <Footer />
     </div>
   );
