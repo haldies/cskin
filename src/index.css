@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2c9d8f;
+  --color-secondary: #515151;
+  --color-desc: #a49898;
+  --background-primary: #2c9d8f;
+}
+
+@layer base {
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 40px;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
