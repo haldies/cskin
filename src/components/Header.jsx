@@ -123,7 +123,7 @@ const Header = () => {
             
             {/* Mobile Scan Button */}
             <div className="flex items-center bg-[#2C9D8F] rounded-xl px-5 py-3 hover:opacity-90 transition mt-8 w-full justify-center">
-              <a href="#" className="text-white text-base font-semibold" onClick={toggleMenu}>Scan Skin</a>
+              <a href="/skintype" className="text-white text-base font-semibold" onClick={toggleMenu}>Scan Skin</a>
               <img src={IconScan} alt="Scan Icon" className="w-6 h-6 ml-2" />
             </div>
           </div>
