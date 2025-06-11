@@ -36,8 +36,7 @@ function SkinTypePage() {
       {/* Modal Fullscreen */}
       {showModal && (
         <div className="fixed inset-0 bg-white z-50 flex flex-col p-6 overflow-y-auto">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold">Deteksi Jenis Kulit</h2>
+          <div className="flex justify-end items-center mb-4">
             <button
               onClick={() => setShowModal(false)}
               className="text-gray-600 hover:text-black text-2xl font-bold"
