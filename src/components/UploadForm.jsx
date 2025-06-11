@@ -34,7 +34,7 @@ export default function UploadForm({ setResult }) {
       videoRef.current.srcObject = mediaStream;
       setStream(mediaStream);
       setShowCamera(true);
-    } catch (err) {
+    } catch (error) {
       alert('Tidak dapat mengakses kamera. Pastikan Anda memberikan izin.');
     }
   };

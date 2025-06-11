@@ -15,7 +15,7 @@ function BubleChat() {
     }, []);
 
     const handleChatbotClick = () => {
-        window.open('https://link-ke-chatbot-anda.com', '_blank');
+        window.open('http://35.223.29.62:8000', '_blank');
     };
 
     return (
