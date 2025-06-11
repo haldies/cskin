@@ -29,8 +29,6 @@ function SkinTypePage() {
             Mulai Deteksi Wajah
           </button>
         </section>
-
-        <SkincareRoadmap />
       </main>
       <Footer />
       <BubleChat />

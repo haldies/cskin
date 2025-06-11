@@ -9,9 +9,14 @@ import SkintificImageM from '../assets/skintific-moisturizer.jpg';
 import DorskinImage from '../assets/Dorskin-cuci-muka.png';
 import GlowtoGlowM from '../assets/glow2glow-moisturizer.jpg';
 import HadalaboImageM from '../assets/hadalabo-moisturizer.png';
+import NpureImageT from '../assets/toner-npure.jpg';
+import ElformulaImageSE from '../assets/eformula-serum.jpg';
+import SkintificImageSE from '../assets/skintific-serum.jpg';
+import BhumiImageSE from '../assets/serum-bhumi.jpg';
+import SkintificImageT from '../assets/toner-skintific.png';
+import GlowToGlowT from '../assets/GlowToGlow-toner.png';
 import NearbyStores from './NearbyStores';
 
-// Product data with skin type compatibility
 const steps = [
     {
         step: 1,
@@ -19,96 +24,137 @@ const steps = [
         description: 'Bersihkan wajah dari debu, minyak, dan sisa makeup. Langkah awal ini penting agar kulit siap menyerap produk lainnya.',
         icon: <FaTint className="text-2xl" />,
         time: 'Pagi & Malam',
+        skinTypes: 'Semua jenis kulit',
         products: [
             {
                 name: 'Hada Labo Gokujyun Cleansing Foam',
                 price: 'Rp80.000',
                 link: '#',
                 image: HadalaboImage,
-                compatibleSkinTypes: ['Normal', 'Dry'],
-                description: 'Cleanser lembut dengan hyaluronic acid untuk kulit normal hingga kering.'
             },
             {
                 name: 'Npure Tea Tree Oil Cleanser',
                 price: 'Rp95.000',
                 link: '#',
                 image: NpureImage,
-                compatibleSkinTypes: ['Oily'],
-                description: 'Mengontrol minyak berlebih dengan tea tree oil untuk kulit berminyak.'
             },
             {
                 name: 'dorskin Gentle Cleanser',
                 price: 'Rp75.000',
                 link: '#',
                 image: DorskinImage,
-                compatibleSkinTypes: ['Normal', 'Oily', 'Dry'],
-                description: 'Formula gentle untuk semua jenis kulit, termasuk sensitif.'
             },
         ],
     },
     {
         step: 2,
+        title: 'Toner',
+        description: 'Menyeimbangkan pH kulit dan membantu menyerap skincare berikutnya dengan lebih baik.',
+        icon: <FaStar className="text-2xl" />,
+        time: 'Pagi & Malam',
+        skinTypes: 'Berminyak, Kombinasi, Sensitif',
+        products: [
+            {
+                name: 'Npure Tea Tree Toner',
+                price: 'Rp80.000',
+                link: '#',
+                image: NpureImageT,
+            },
+            {
+                name: 'Skintific Toner',
+                price: 'Rp95.000',
+                link: '#',
+                image: SkintificImageT,
+            },
+            {
+                name: 'Glow To Glow Toner',
+                price: 'Rp75.000',
+                link: '#',
+                image: GlowToGlowT,
+            },
+        ],
+    },
+    {
+        step: 3,
+        title: 'Serum',
+        description: 'Serum mengandung bahan aktif untuk mengatasi masalah kulit spesifik seperti jerawat, flek, atau dehidrasi.',
+        icon: <FaMoon className="text-2xl" />,
+        time: 'Pagi atau Malam (sesuai kandungan)',
+        skinTypes: 'Disesuaikan kebutuhan',
+        products: [
+            {
+                name: 'Skintific Serum Vitamin C',
+                price: 'Rp80.000',
+                link: '#',
+                image: SkintificImageSE,
+            },
+            {
+                name: 'Elformula Serum Anti-Aging',
+                price: 'Rp95.000',
+                link: '#',
+                image: ElformulaImageSE,
+            },
+            {
+                name: 'Bhumi Serum Hydrating',
+                price: 'Rp75.000',
+                link: '#',
+                image: BhumiImageSE,
+            },
+        ],
+    },
+    {
+        step: 4,
         title: 'Moisturizer (Pelembap)',
         description: 'Mengunci kelembapan dan menjaga skin barrier agar kulit tetap sehat dan kenyal.',
         icon: <FaTint className="text-2xl" />,
         time: 'Pagi & Malam',
+        skinTypes: 'Semua jenis kulit',
         products: [
             {
                 name: 'Skintific Moisturizer Gel',
                 price: 'Rp80.000',
                 link: '#',
                 image: SkintificImageM,
-                compatibleSkinTypes: ['Oily'],
-                description: 'Tekstur gel ringan yang cepat menyerap, ideal untuk kulit berminyak.'
             },
             {
                 name: 'Hada Labo Moisturizer Cream',
                 price: 'Rp95.000',
                 link: '#',
                 image: HadalaboImageM,
-                compatibleSkinTypes: ['Normal', 'Dry'],
-                description: 'Krim pelembab intensif dengan 3 jenis hyaluronic acid.'
             },
             {
                 name: 'Glow to Glow Moisturizer',
                 price: 'Rp75.000',
                 link: '#',
                 image: GlowtoGlowM,
-                compatibleSkinTypes: ['Normal'],
-                description: 'Memberikan kelembapan seimbang untuk kulit normal.'
             },
         ],
     },
     {
-        step: 3,
+        step: 5,
         title: 'Sunscreen (Pagi Hari)',
         description: 'Melindungi kulit dari sinar UVA/UVB yang dapat menyebabkan penuaan dini dan hiperpigmentasi.',
         icon: <FaSun className="text-2xl" />,
         time: 'Pagi saja',
+        skinTypes: 'Semua jenis kulit',
         products: [
             {
                 name: 'Azarine Sunscreen Gel SPF 50',
                 price: 'Rp80.000',
                 link: '#',
                 image: AzarinSunscreen,
-                compatibleSkinTypes: ['Oily'],
-                description: 'Sunscreen gel tidak berminyak dengan tekstur ringan.'
             },
             {
                 name: 'Skintific Sunscreen Gel SPF 50',
                 price: 'Rp95.000',
                 link: '#',
                 image: SkintificImageS,
-                compatibleSkinTypes: ['Normal', 'Oily'],
-                description: 'Proteksi tinggi dengan finish matte.'
             },
             {
                 name: 'Wardah Sunscreen Gel SPF 30',
                 price: 'Rp75.000',
                 link: '#',
                 image: wardahImageS,
-                compatibleSkinTypes: ['Normal', 'Dry'],
-                description: 'Sunscreen dengan ekstrak alami yang melembabkan.'
             },
         ],
     },
@@ -165,6 +211,7 @@ const ProductCarousel = ({ products, onSelect }) => {
                 </div>
             </div>
 
+            {/* Navigation arrows */}
             {products.length > 1 && (
                 <>
                     <button 
@@ -182,6 +229,7 @@ const ProductCarousel = ({ products, onSelect }) => {
                 </>
             )}
 
+            {/* Indicators */}
             <div className="flex justify-center mt-4 space-x-2">
                 {products.map((_, index) => (
                     <button
@@ -195,45 +243,22 @@ const ProductCarousel = ({ products, onSelect }) => {
     );
 };
 
-const SkincareRoadmap = ({ skinType }) => {
+const SkincareRoadmap = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
-
-    // Filter products based on skin type
-    const getFilteredProducts = (defaultProducts) => {
-        if (!skinType) return defaultProducts;
-        
-        return defaultProducts.filter(product => 
-            product.compatibleSkinTypes?.includes(skinType) || 
-            !product.compatibleSkinTypes
-        );
-    };
-
-    const filteredSteps = steps.map(step => ({
-        ...step,
-        products: getFilteredProducts(step.products)
-    }));
-
-    // Map skin type to Indonesian for display
-    const skinTypeMap = {
-        'Normal': 'Normal',
-        'Oily': 'Berminyak',
-        'Dry': 'Kering'
-    };
-
-    const displaySkinType = skinTypeMap[skinType] || 'Anda';
 
     return (
         <section className="py-12 px-4 md:px-8 bg-gradient-to-b from-white to-gray-50">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-3">
-                        Panduan Skincare Dasar {skinType && `untuk Kulit ${displaySkinType}`}
+                        Panduan Skincare Dasar untuk Pemula
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Rekomendasi produk yang cocok untuk jenis kulit {displaySkinType.toLowerCase()}
+                        Langkah demi langkah merawat kulit dengan benar ✨
                     </p>
                 </div>
 
+                {/* MODAL */}
                 {selectedProduct && (
                     <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4">
                         <div className="bg-white rounded-2xl w-full max-w-md p-6 relative shadow-2xl h-3/4 overflow-y-auto">
@@ -260,24 +285,14 @@ const SkincareRoadmap = ({ skinType }) => {
                                     </p>
                                     
                                     <div className="mb-4">
-                                        <h3 className="font-semibold text-gray-800 mb-2">Cocok untuk kulit:</h3>
-                                        <div className="flex gap-2 flex-wrap">
-                                            {selectedProduct.compatibleSkinTypes?.map(type => (
-                                                <span key={type} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
-                                                    {skinTypeMap[type] || type}
-                                                </span>
-                                            ))}
-                                            {!selectedProduct.compatibleSkinTypes && (
-                                                <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
-                                                    Semua jenis kulit
-                                                </span>
-                                            )}
-                                        </div>
-                                    </div>
-
-                                    <div className="mb-4">
                                         <h3 className="font-semibold text-gray-800 mb-2">Tersedia di:</h3>
-                                        <NearbyStores/>
+                                        <ul className="list-disc  text-gray-700 space-y-1">
+                                            {selectedProduct.stores?.length > 0 ? (
+                                                selectedProduct.stores.map((store, idx) => <li key={idx}>{store}</li>)
+                                            ) : (
+                                                <NearbyStores/>
+                                            )}
+                                        </ul>
                                     </div>
 
                                     <a
@@ -294,17 +309,21 @@ const SkincareRoadmap = ({ skinType }) => {
                     </div>
                 )}
 
+                {/* SKINCARE STEPS */}
                 <div className="relative">
                     <div className="absolute left-8 top-0 bottom-0 w-1 bg-primary/20 hidden md:block"></div>
                     
                     <div className="space-y-8">
-                        {filteredSteps.map(({ step, title, description, icon, time, products }) => (
+                        {steps.map(({ step, title, description, icon, time, skinTypes, products }) => (
                             <div key={step} className="relative group">
+                                {/* Timeline dot */}
                                 <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center">
                                     <div className="w-6 h-6 bg-primary rounded-full border-4 border-white shadow-lg z-10 group-hover:scale-125 transition-transform"></div>
                                 </div>
 
+                                {/* Step card */}
                                 <div className="ml-0 md:ml-16 bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+                                    {/* Step header */}
                                     <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-5 border-b border-gray-100">
                                         <div className="flex items-center gap-4">
                                             <div className="bg-white p-3 rounded-full shadow-md text-primary">
@@ -317,6 +336,7 @@ const SkincareRoadmap = ({ skinType }) => {
                                         </div>
                                     </div>
 
+                                    {/* Step content */}
                                     <div className="p-5">
                                         <p className="text-gray-700 mb-5">{description}</p>
                                         
@@ -327,54 +347,49 @@ const SkincareRoadmap = ({ skinType }) => {
                                             </div>
                                             <div className="bg-gray-50 p-3 rounded-lg">
                                                 <h4 className="font-semibold text-gray-800 mb-1">Jenis Kulit</h4>
-                                                <p className="text-gray-600">{skinType}</p>
+                                                <p className="text-gray-600">{skinTypes}</p>
                                             </div>
                                         </div>
 
+                                        {/* Products */}
                                         <div>
                                             <h4 className="font-semibold text-secondary text-lg mb-3">Rekomendasi Produk</h4>
                                             
-                                            {products.length > 0 ? (
-                                                <>
-                                                    <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                                                        {products.map((product, i) => (
-                                                            <div
-                                                                key={i}
-                                                                className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                                            {/* Desktop grid view */}
+                                            <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                                                {products?.map((product, i) => (
+                                                    <div
+                                                        key={i}
+                                                        className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                                                    >
+                                                        <div className="h-48 bg-gray-100 overflow-hidden">
+                                                            <img
+                                                                src={product.image}
+                                                                alt={product.name}
+                                                                className="w-full h-full object-contain p-4 transition-transform duration-500 hover:scale-110"
+                                                            />
+                                                        </div>
+                                                        <div className="p-4">
+                                                            <h5 className="font-semibold text-secondary line-clamp-2">{product.name}</h5>
+                                                            <p className="text-primary font-medium mt-2">{product.price}</p>
+                                                            <button
+                                                                onClick={() => setSelectedProduct(product)}
+                                                                className="mt-4 w-full bg-primary/10 text-primary font-semibold py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition"
                                                             >
-                                                                <div className="h-48 bg-gray-100 overflow-hidden">
-                                                                    <img
-                                                                        src={product.image}
-                                                                        alt={product.name}
-                                                                        className="w-full h-full object-contain p-4 transition-transform duration-500 hover:scale-110"
-                                                                    />
-                                                                </div>
-                                                                <div className="p-4">
-                                                                    <h5 className="font-semibold text-secondary line-clamp-2">{product.name}</h5>
-                                                                    <p className="text-primary font-medium mt-2">{product.price}</p>
-                                                                    <button
-                                                                        onClick={() => setSelectedProduct(product)}
-                                                                        className="mt-4 w-full bg-primary/10 text-primary font-semibold py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition"
-                                                                    >
-                                                                        Detail Produk
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        ))}
+                                                                Detail Produk
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                    
-                                                    <div className="md:hidden">
-                                                        <ProductCarousel 
-                                                            products={products} 
-                                                            onSelect={setSelectedProduct} 
-                                                        />
-                                                    </div>
-                                                </>
-                                            ) : (
-                                                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-center">
-                                                    <p className="text-yellow-800">Maaf, belum ada rekomendasi produk khusus untuk kulit {displaySkinType.toLowerCase()} pada langkah ini.</p>
-                                                </div>
-                                            )}
+                                                ))}
+                                            </div>
+                                            
+                                            {/* Mobile carousel */}
+                                            <div className="md:hidden">
+                                                <ProductCarousel 
+                                                    products={products} 
+                                                    onSelect={setSelectedProduct} 
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
