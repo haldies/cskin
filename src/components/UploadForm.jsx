@@ -73,7 +73,7 @@ export default function UploadForm({ setResult }) {
     formData.append('image', file);
 
     try {
-      const response = await fetch('https://bakcend-cskin-50598077190.asia-southeast1.run.app/api/predict', {
+      const response = await fetch('https://cskin-ai-50598077190.asia-southeast1.run.app/api/predict', {
         method: 'POST',
         body: formData,
       });
