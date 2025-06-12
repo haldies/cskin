@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 export default function UploadForm({ setResult }) {
   const fileInputRef = useRef(null);
@@ -10,6 +10,16 @@ export default function UploadForm({ setResult }) {
   const [showCamera, setShowCamera] = useState(false);
   const [stream, setStream] = useState(null);
   const [capturedCount, setCapturedCount] = useState(0);
+  const [cameraError, setCameraError] = useState(null);
+
+  // Cleanup stream on component unmount
+  useEffect(() => {
+    return () => {
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+      }
+    };
+  }, [stream]);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -26,46 +36,142 @@ export default function UploadForm({ setResult }) {
   };
 
   const startCamera = async () => {
+    setCameraError(null);
+    console.log('Starting camera...');
+    
     try {
-      const mediaStream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: 'user' },
+      // Stop any existing stream first
+      if (stream) {
+        console.log('Stopping existing stream...');
+        stream.getTracks().forEach(track => track.stop());
+        setStream(null);
+      }
+
+      // Check if getUserMedia is supported
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        throw new Error('Camera not supported by this browser');
+      }
+
+      console.log('Requesting camera access...');
+
+      // Try with different constraints - start simple
+      let constraints = {
+        video: true,
         audio: false,
-      });
-      videoRef.current.srcObject = mediaStream;
+      };
+
+      // Try to get media stream
+      const mediaStream = await navigator.mediaDevices.getUserMedia(constraints);
+      console.log('Camera access granted, stream obtained:', mediaStream);
+
+      // Set stream immediately
       setStream(mediaStream);
       setShowCamera(true);
+
+      // Wait a bit for React to render the video element
+      await new Promise(resolve => setTimeout(resolve, 100));
+
+      // Now set the video source
+      if (videoRef.current) {
+        console.log('Setting video source...');
+        videoRef.current.srcObject = mediaStream;
+        
+        // Force video to play
+        try {
+          await videoRef.current.play();
+          console.log('Video started playing');
+        } catch (playError) {
+          console.log('Video play error (this is often normal):', playError.message);
+          // This error is often harmless in modern browsers
+        }
+      } else {
+        console.error('Video element not found');
+        throw new Error('Video element not available');
+      }
+
     } catch (error) {
-      alert('Tidak dapat mengakses kamera. Pastikan Anda memberikan izin.');
+      console.error('Camera error details:', {
+        name: error.name,
+        message: error.message,
+        stack: error.stack
+      });
+      
+      // Clean up any partial streams
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+        setStream(null);
+      }
+      
+      let errorMessage = 'Tidak dapat mengakses kamera. ';
+      
+      if (error.name === 'NotAllowedError') {
+        errorMessage += 'Mohon berikan izin akses kamera di browser Anda. Coba refresh halaman dan klik "Allow" saat diminta.';
+      } else if (error.name === 'NotFoundError') {
+        errorMessage += 'Kamera tidak ditemukan pada perangkat Anda.';
+      } else if (error.name === 'NotSupportedError') {
+        errorMessage += 'Browser Anda tidak mendukung akses kamera.';
+      } else if (error.name === 'NotReadableError') {
+        errorMessage += 'Kamera sedang digunakan aplikasi lain. Tutup aplikasi lain yang menggunakan kamera.';
+      } else if (error.name === 'OverconstrainedError') {
+        errorMessage += 'Pengaturan kamera tidak didukung perangkat Anda.';
+      } else {
+        errorMessage += `Error: ${error.message}. Coba refresh halaman atau gunakan browser lain.`;
+      }
+      
+      setCameraError(errorMessage);
+      setShowCamera(false);
     }
   };
 
   const stopCamera = () => {
     if (stream) {
-      stream.getTracks().forEach(track => track.stop());
+      stream.getTracks().forEach(track => {
+        track.stop();
+      });
       setStream(null);
     }
+    if (videoRef.current) {
+      videoRef.current.srcObject = null;
+    }
     setShowCamera(false);
+    setCameraError(null);
   };
 
   const capturePhoto = () => {
     const video = videoRef.current;
     const canvas = canvasRef.current;
+    
+    if (!video || !canvas) {
+      alert('Error: Video atau canvas tidak tersedia');
+      return;
+    }
+
+    // Make sure video is playing and has dimensions
+    if (video.videoWidth === 0 || video.videoHeight === 0) {
+      alert('Video belum siap. Tunggu sebentar dan coba lagi.');
+      return;
+    }
+
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
-    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+    
+    const context = canvas.getContext('2d');
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    const imageDataUrl = canvas.toDataURL('image/png');
-    setPreview(imageDataUrl);
-
-    fetch(imageDataUrl)
-      .then(res => res.blob())
-      .then(blob => {
+    canvas.toBlob((blob) => {
+      if (blob) {
         const file = new File([blob], 'selfie.png', { type: 'image/png' });
         setSelectedFile(file);
+        
+        const imageDataUrl = canvas.toDataURL('image/png');
+        setPreview(imageDataUrl);
         setCapturedCount(prev => prev + 1);
-      });
-
-    stopCamera();
+        
+        stopCamera();
+      } else {
+        alert('Gagal mengambil foto. Silakan coba lagi.');
+      }
+    }, 'image/png', 0.8);
   };
 
   const uploadImageForAnalysis = async (file) => {
@@ -113,6 +219,7 @@ export default function UploadForm({ setResult }) {
     setPreview(null);
     setSelectedFile(null);
     setCapturedCount(0);
+    setCameraError(null);
     stopCamera();
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
@@ -141,7 +248,14 @@ export default function UploadForm({ setResult }) {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6 border-2 border-dashed border-gray-300 p-6  rounded-4xl shadow-lg">
+      {/* Show camera error if any */}
+      {cameraError && (
+        <div className="bg-red-50 p-4 rounded-lg border-l-4 border-red-400 mb-4">
+          <p className="text-red-700 text-sm">{cameraError}</p>
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-6 border-2 border-dashed border-gray-300 p-6 rounded-4xl shadow-lg">
         {!preview ? (
           showCamera ? (
             <div className="flex flex-col items-center gap-4">
