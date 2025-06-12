@@ -70,8 +70,7 @@ const Header = () => {
 
                 {/* Scan Skin Button - Hidden on small mobile, shown otherwise */}
                 <div className="hidden sm:flex items-center bg-[#2C9D8F] rounded-xl px-4 py-2 hover:opacity-90 transition ml-4">
-                    <a href="#" className="text-white text-sm font-semibold">Scan Skin</a>
-                    <img src={IconScan} alt="Scan Icon" className="w-5 h-5 ml-2" />
+                    <a href="#" className="text-white text-sm font-semibold">Daftar</a>
                 </div>
 
                 {/* Mobile Menu Overlay */}
@@ -122,8 +121,7 @@ const Header = () => {
 
                         {/* Mobile Scan Button */}
                         <div className="flex items-center bg-[#2C9D8F] rounded-xl px-5 py-3 hover:opacity-90 transition mt-8 w-full justify-center">
-                            <a href="/skintype" className="text-white text-base font-semibold" onClick={toggleMenu}>Scan Skin</a>
-                            <img src={IconScan} alt="Scan Icon" className="w-6 h-6 ml-2" />
+                        <span className='text-white text-sm font-semibold'>Daftar</span>
                         </div>
                     </div>
                 )}

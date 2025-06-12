@@ -4,7 +4,6 @@ function BubleChat() {
     const [isPulsing, setIsPulsing] = useState(false);
     const [showTooltip, setShowTooltip] = useState(false);
 
-    // Efek untuk animasi pulsing setiap 8 detik
     useEffect(() => {
         const interval = setInterval(() => {
             setIsPulsing(true);
@@ -15,7 +14,7 @@ function BubleChat() {
     }, []);
 
     const handleChatbotClick = () => {
-        window.open('http://35.223.29.62:8000', '_blank');
+        window.open('https://c-skin-934512542726.asia-southeast1.run.app', '_blank');
     };
 
     return (

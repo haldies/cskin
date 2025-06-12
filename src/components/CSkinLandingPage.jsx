@@ -7,6 +7,7 @@ import KeringImage from '../assets/kering.png';
 import KombinasiImage from '../assets/kombinasi.png';
 import NormalImage from '../assets/normal.png';
 import BubleChat from './BubleChat';
+import IconScan from '../assets/icon-scan.svg';
 
 const CSkinLandingPage = () => {
   const [activeModal, setActiveModal] = useState(null);
@@ -169,12 +170,10 @@ const CSkinLandingPage = () => {
             Dapatkan rekomendasi kandungan skincare yang sesuai, agar perawatan
             kulitmu lebih efektif dan tepat sasaran.
           </p>
-          <a
-            href="http://35.223.29.62:8000"
-            className="inline-block bg-teal-600 rounded-xl text-white font-bold text-base md:text-lg px-6 py-3 hover:bg-teal-700 transition-colors"
-          >
-            Konsultasi sekarang
-          </a>
+          <div className="flex items-center bg-[#2C9D8F] rounded-xl px-5 py-3 hover:opacity-90 transition mt-8 w-48 justify-center">
+            <a href="/skintype" className="text-white text-base font-semibold" >Scan Skin</a>
+            <img src={IconScan} alt="Scan Icon" className="w-6 h-6 ml-2" />
+          </div>
         </div>
         <div className="order-1 md:order-2 w-full md:w-auto">
           <img
