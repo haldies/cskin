@@ -22,24 +22,24 @@ const steps = [
         products: [
             {
                 name: 'Hada Labo Gokujyun Cleansing Foam',
-                price: 'Rp80.000',
-                link: '#',
+                price: 'Rp41.300',
+                link: 'https://shopee.co.id/universal-link/Hada-Labo-Gokujyun-Face-Wash-50gr-100gr-Hada-Labo-Pembersih-Wajah-i.119727251.4057564909',
                 image: HadalaboImage,
                 compatibleSkinTypes: ['Normal', 'Dry'],
                 description: 'Cleanser lembut dengan hyaluronic acid untuk kulit normal hingga kering.'
             },
             {
                 name: 'Npure Tea Tree Oil Cleanser',
-                price: 'Rp95.000',
-                link: '#',
+                price: 'Rp65.000',
+                link: 'https://s.shopee.co.id/3qBJHWfS3s',
                 image: NpureImage,
                 compatibleSkinTypes: ['Oily'],
                 description: 'Mengontrol minyak berlebih dengan tea tree oil untuk kulit berminyak.'
             },
             {
                 name: 'dorskin Gentle Cleanser',
-                price: 'Rp75.000',
-                link: '#',
+                price: 'Rp64.000',
+                link: 'https://shopee.co.id/Dorskin-Cica-Dream-Gentle-Cleanser-Sabun-Cuci-Muka-Kulit-Jerawat-Bruntusan-Low-pH-Face-Wash-Centella-Asiatica-i.361954782.20165417686',
                 image: DorskinImage,
                 compatibleSkinTypes: ['Normal', 'Oily', 'Dry'],
                 description: 'Formula gentle untuk semua jenis kulit, termasuk sensitif.'
@@ -55,24 +55,24 @@ const steps = [
         products: [
             {
                 name: 'Skintific Moisturizer Gel',
-                price: 'Rp80.000',
-                link: '#',
+                price: 'Rp78.000',
+                link: 'https://shopee.co.id/skintific_id',
                 image: SkintificImageM,
                 compatibleSkinTypes: ['Oily'],
                 description: 'Tekstur gel ringan yang cepat menyerap, ideal untuk kulit berminyak.'
             },
             {
                 name: 'Hada Labo Moisturizer Cream',
-                price: 'Rp95.000',
-                link: '#',
+                price: 'Rp91.700',
+                link: 'https://shopee.co.id/list/Moisturizer/Hada%20Labo',
                 image: HadalaboImageM,
                 compatibleSkinTypes: ['Normal', 'Dry'],
                 description: 'Krim pelembab intensif dengan 3 jenis hyaluronic acid.'
             },
             {
                 name: 'Glow to Glow Moisturizer',
-                price: 'Rp75.000',
-                link: '#',
+                price: 'Rp38.500',
+                link: 'https://shopee.co.id/GLAD2GLOW-POMEGRANATE-5-NIACINAMIDE-BRIGHTENING-MOISTURIZER-(-30-g-)-Pelembab-Wajah-Whitening-Glowing-Moisture-Gel-Day-NIght-Cream-Kulit-Lebih-Cerah-dan-Bercahaya-G2G-i.234906318.25511274305',
                 image: GlowtoGlowM,
                 compatibleSkinTypes: ['Normal'],
                 description: 'Memberikan kelembapan seimbang untuk kulit normal.'
@@ -88,24 +88,24 @@ const steps = [
         products: [
             {
                 name: 'Azarine Sunscreen Gel SPF 50',
-                price: 'Rp80.000',
-                link: '#',
+                price: 'Rp50.000',
+                link: 'https://shopee.co.id/universal-link/-SALE-NEW-FORMULA-AZARINE-HYDRASOOTHE-SUNSCREEN-GEL-SPF-50-PA-50ML-i.4698074.8374427345',
                 image: AzarinSunscreen,
                 compatibleSkinTypes: ['Oily'],
                 description: 'Sunscreen gel tidak berminyak dengan tekstur ringan.'
             },
             {
                 name: 'Skintific Sunscreen Gel SPF 50',
-                price: 'Rp95.000',
-                link: '#',
+                price: 'Rp98.910',
+                link: 'https://shopee.co.id/SKINTIFIC-5X-CERAMIDE-SERUM-SUNSCREEN-SPF50-PA--i.10990260.23201488120',
                 image: SkintificImageS,
                 compatibleSkinTypes: ['Normal', 'Oily'],
                 description: 'Proteksi tinggi dengan finish matte.'
             },
             {
                 name: 'Wardah Sunscreen Gel SPF 30',
-                price: 'Rp75.000',
-                link: '#',
+                price: 'Rp35.000',
+                link: 'https://shopee.co.id/universal-link/Wardah-UV-Shield-Essential-Sunscreen-Gel-SPF-30-PA-40ml-i.146020867.22425761209',
                 image: wardahImageS,
                 compatibleSkinTypes: ['Normal', 'Dry'],
                 description: 'Sunscreen dengan ekstrak alami yang melembabkan.'
