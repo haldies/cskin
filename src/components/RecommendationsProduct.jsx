@@ -10,6 +10,7 @@ import DorskinImage from '../assets/Dorskin-cuci-muka.png';
 import GlowtoGlowM from '../assets/glow2glow-moisturizer.jpg';
 import HadalaboImageM from '../assets/hadalabo-moisturizer.png';
 import NearbyStores from './NearbyStores';
+import BubleChat from './BubleChat';
 
 // Product data with skin type compatibility
 const steps = [
@@ -55,7 +56,7 @@ const steps = [
         products: [
             {
                 name: 'Skintific Moisturizer Gel',
-                price: 'Rp78.000',
+                price: 'Rp109.650',
                 link: 'https://shopee.co.id/skintific_id',
                 image: SkintificImageM,
                 compatibleSkinTypes: ['Oily'],
@@ -63,7 +64,7 @@ const steps = [
             },
             {
                 name: 'Hada Labo Moisturizer Cream',
-                price: 'Rp91.700',
+                price: 'Rp48.500',
                 link: 'https://shopee.co.id/list/Moisturizer/Hada%20Labo',
                 image: HadalaboImageM,
                 compatibleSkinTypes: ['Normal', 'Dry'],
@@ -72,7 +73,7 @@ const steps = [
             {
                 name: 'Glow to Glow Moisturizer',
                 price: 'Rp38.500',
-                link: 'https://shopee.co.id/GLAD2GLOW-POMEGRANATE-5-NIACINAMIDE-BRIGHTENING-MOISTURIZER-(-30-g-)-Pelembab-Wajah-Whitening-Glowing-Moisture-Gel-Day-NIght-Cream-Kulit-Lebih-Cerah-dan-Bercahaya-G2G-i.234906318.25511274305',
+                link: 'https://s.shopee.co.id/6AZE4U2TLd',
                 image: GlowtoGlowM,
                 compatibleSkinTypes: ['Normal'],
                 description: 'Memberikan kelembapan seimbang untuk kulit normal.'
@@ -383,6 +384,7 @@ const SkincareRoadmap = ({ skinType }) => {
                     </div>
                 </div>
             </div>
+            <BubleChat/>
         </section>
     );
 };
