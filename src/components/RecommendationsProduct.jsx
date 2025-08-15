@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { FaSun, FaMoon, FaTint, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import EminaM from '../assets/Emina_Bright_Stuff_Moisturizing_Cream.png';
 import WardahNatureM from '../assets/Wardah_Nature_Daily_Aloe_Hydramild Moisturizer_Cream.png';
-import  WardahUv50 from '../assets/Wardah_UV_SPF_50_PA.jpg';
+import  WardahUv35 from '../assets/WardahUVShield.png';
+import  WardahUv50 from '../assets/Wardah_UV_SPF_50_PA.png';
 import WardahFashwash from '../assets/Wardah_Lightening_Whip_Facial_Foam.jpeg'
-import WardahFashwash2 from '../assets/Wardah_Lightening_Whip_Facial_Foam.jpeg'
+import WardahFashwash2 from '../assets/Wardah_Nature_Daily_Aloe_Hydramild_Facial_Wash.jpg'
 import BubleChat from './BubleChat';
 import NearbyStores from './NearbyStores';
 
@@ -19,16 +20,16 @@ const steps = [
         products: [
             {
                 name: 'Wardah Lightening Whip Facial Foam',
-                price: 'Rp41.300',
-                link: 'https://shopee.co.id/universal-link/Hada-Labo-Gokujyun-Face-Wash-50gr-100gr-Hada-Labo-Pembersih-Wajah-i.119727251.4057564909',
+                price: 'Rp32.500',
+                link: 'https://s.shopee.co.id/qZKWgcJmg',
                 image: WardahFashwash,
                 compatibleSkinTypes: ['Normal', 'Dry','Oily'],
                 description: 'Cleanser lembut dengan hyaluronic acid untuk kulit normal hingga kering.'
             },
             {
                 name: 'Wardah Nature Daily Aloe Hydramild Facial Wash',
-                price: 'Rp65.000',
-                link: 'https://s.shopee.co.id/3qBJHWfS3s',
+                price: 'Rp25.000',
+                link: 'https://s.shopee.co.id/AA6zdz3tXS',
                 image: WardahFashwash2,
                 compatibleSkinTypes: ['Normal', 'Dry','Oily'],
                 description: 'Mengontrol minyak berlebih dengan tea tree oil untuk kulit berminyak.'
@@ -44,16 +45,16 @@ const steps = [
         products: [
             {
                 name: 'Emina Bright Stuff Moisturizing Cream',
-                price: 'Rp109.650',
-                link: 'https://shopee.co.id/skintific_id',
+                price: 'Rp24.500',
+                link: 'https://s.shopee.co.id/4L9ChL2dKq',
                 image: EminaM,
                 compatibleSkinTypes: ['Normal', 'Dry','Oily'],
                 description: 'Tekstur gel ringan yang cepat menyerap, ideal untuk kulit berminyak.'
             },
             {
                 name: 'Wardah Nature Daily Aloe Hydramild Moisturizer Cream',
-                price: 'Rp48.500',
-                link: 'https://shopee.co.id/list/Moisturizer/Hada%20Labo',
+                price: 'Rp39.000',
+                link: 'https://s.shopee.co.id/2B4i7dcjOV',
                 image: WardahNatureM,
                 compatibleSkinTypes: ['Normal', 'Dry','Oily'],
                 description: 'Krim pelembab intensif dengan 3 jenis hyaluronic acid.'
@@ -68,9 +69,17 @@ const steps = [
         time: 'Pagi saja',
         products: [
             {
-                name: 'Wardah UV Shield Active Protection Serum SPF 50 PA++++',
-                price: 'Rp25.000',
-                link: 'https://shopee.co.id/universal-link/-SALE-NEW-FORMULA-AZARINE-HYDRASOOTHE-SUNSCREEN-GEL-SPF-50-PA-50ML-i.4698074.8374427345',
+                name: 'Wardah UV Shield Bright-C Hydrating Sunscreen Serum SPF 35 PA+++',
+                price: 'Rp37.500',
+                link: 'https://s.shopee.co.id/1Vp1KVGQze',
+                image: WardahUv35,
+                compatibleSkinTypes: ['Normal', 'Dry','Oily'],
+                description: 'Sunscreen gel tidak berminyak dengan tekstur ringan.'
+            },
+            {
+                name: 'Wardah UV Shield Airy Smooth Sunscreen Serum SPF 50 PA++++ - Sunscreen matte dan ringan',
+                price: 'Rp37.500',
+                link: 'https://s.shopee.co.id/6VDhHyLoOv',
                 image: WardahUv50,
                 compatibleSkinTypes: ['Normal', 'Dry','Oily'],
                 description: 'Sunscreen gel tidak berminyak dengan tekstur ringan.'
