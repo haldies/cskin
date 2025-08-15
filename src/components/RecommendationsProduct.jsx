@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
 import { FaSun, FaMoon, FaTint, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import AzarinSunscreen from '../assets/azarine-sunscreen.png';
-import HadalaboImage from '../assets/cuci-muka-hadalabo.png';
-import NpureImage from '../assets/Npure-cuci-muka.png';
-import SkintificImageS from '../assets/sunscreen-skintific.png';
-import wardahImageS from '../assets/sunscreen-wardah.png';
-import SkintificImageM from '../assets/skintific-moisturizer.jpg';
-import DorskinImage from '../assets/Dorskin-cuci-muka.png';
-import GlowtoGlowM from '../assets/glow2glow-moisturizer.jpg';
-import HadalaboImageM from '../assets/hadalabo-moisturizer.png';
-import NearbyStores from './NearbyStores';
-import BubleChat from './BubleChat';
+import EminaM from '../assets/Emina_Bright_Stuff_Moisturizing_Cream.png';
+import WardahNatureM from '../assets/Wardah_Nature_Daily_Aloe_Hydramild Moisturizer_Cream.png';
+import  WardahUv50 from '../assets/Wardah_UV_SPF_50_PA.jpg';
+import WardahFashwash from '../assets/Wardah_Lightening_Whip_Facial_Foam.jpeg'
+import WardahFashwash2 from '../assets/Wardah_Lightening_Whip_Facial_Foam.jpeg'
 
-// Product data with skin type compatibility
 const steps = [
     {
         step: 1,
@@ -22,28 +15,20 @@ const steps = [
         time: 'Pagi & Malam',
         products: [
             {
-                name: 'Hada Labo Gokujyun Cleansing Foam',
+                name: 'Wardah Lightening Whip Facial Foam',
                 price: 'Rp41.300',
                 link: 'https://shopee.co.id/universal-link/Hada-Labo-Gokujyun-Face-Wash-50gr-100gr-Hada-Labo-Pembersih-Wajah-i.119727251.4057564909',
-                image: HadalaboImage,
-                compatibleSkinTypes: ['Normal', 'Dry'],
+                image: WardahFashwash,
+                compatibleSkinTypes: ['Normal', 'Dry','Oily'],
                 description: 'Cleanser lembut dengan hyaluronic acid untuk kulit normal hingga kering.'
             },
             {
-                name: 'Npure Tea Tree Oil Cleanser',
+                name: 'Wardah Nature Daily Aloe Hydramild Facial Wash',
                 price: 'Rp65.000',
                 link: 'https://s.shopee.co.id/3qBJHWfS3s',
-                image: NpureImage,
-                compatibleSkinTypes: ['Oily'],
+                image: WardahFashwash2,
+                compatibleSkinTypes: ['Normal', 'Dry','Oily'],
                 description: 'Mengontrol minyak berlebih dengan tea tree oil untuk kulit berminyak.'
-            },
-            {
-                name: 'dorskin Gentle Cleanser',
-                price: 'Rp64.000',
-                link: 'https://shopee.co.id/Dorskin-Cica-Dream-Gentle-Cleanser-Sabun-Cuci-Muka-Kulit-Jerawat-Bruntusan-Low-pH-Face-Wash-Centella-Asiatica-i.361954782.20165417686',
-                image: DorskinImage,
-                compatibleSkinTypes: ['Normal', 'Oily', 'Dry'],
-                description: 'Formula gentle untuk semua jenis kulit, termasuk sensitif.'
             },
         ],
     },
@@ -55,28 +40,20 @@ const steps = [
         time: 'Pagi & Malam',
         products: [
             {
-                name: 'Skintific Moisturizer Gel',
+                name: 'Emina Bright Stuff Moisturizing Cream',
                 price: 'Rp109.650',
                 link: 'https://shopee.co.id/skintific_id',
-                image: SkintificImageM,
-                compatibleSkinTypes: ['Oily'],
+                image: EminaM,
+                compatibleSkinTypes: ['Normal', 'Dry','Oily'],
                 description: 'Tekstur gel ringan yang cepat menyerap, ideal untuk kulit berminyak.'
             },
             {
-                name: 'Hada Labo Moisturizer Cream',
+                name: 'Wardah Nature Daily Aloe Hydramild Moisturizer Cream',
                 price: 'Rp48.500',
                 link: 'https://shopee.co.id/list/Moisturizer/Hada%20Labo',
-                image: HadalaboImageM,
-                compatibleSkinTypes: ['Normal', 'Dry'],
+                image: WardahNatureM,
+                compatibleSkinTypes: ['Normal', 'Dry','Oily'],
                 description: 'Krim pelembab intensif dengan 3 jenis hyaluronic acid.'
-            },
-            {
-                name: 'Glow to Glow Moisturizer',
-                price: 'Rp38.500',
-                link: 'https://s.shopee.co.id/6AZE4U2TLd',
-                image: GlowtoGlowM,
-                compatibleSkinTypes: ['Normal'],
-                description: 'Memberikan kelembapan seimbang untuk kulit normal.'
             },
         ],
     },
@@ -88,29 +65,14 @@ const steps = [
         time: 'Pagi saja',
         products: [
             {
-                name: 'Azarine Sunscreen Gel SPF 50',
-                price: 'Rp50.000',
+                name: 'Wardah UV Shield Active Protection Serum SPF 50 PA++++',
+                price: 'Rp25.000',
                 link: 'https://shopee.co.id/universal-link/-SALE-NEW-FORMULA-AZARINE-HYDRASOOTHE-SUNSCREEN-GEL-SPF-50-PA-50ML-i.4698074.8374427345',
-                image: AzarinSunscreen,
-                compatibleSkinTypes: ['Oily'],
+                image: WardahUv50,
+                compatibleSkinTypes: ['Normal', 'Dry','Oily'],
                 description: 'Sunscreen gel tidak berminyak dengan tekstur ringan.'
             },
-            {
-                name: 'Skintific Sunscreen Gel SPF 50',
-                price: 'Rp98.910',
-                link: 'https://shopee.co.id/SKINTIFIC-5X-CERAMIDE-SERUM-SUNSCREEN-SPF50-PA--i.10990260.23201488120',
-                image: SkintificImageS,
-                compatibleSkinTypes: ['Normal', 'Oily'],
-                description: 'Proteksi tinggi dengan finish matte.'
-            },
-            {
-                name: 'Wardah Sunscreen Gel SPF 30',
-                price: 'Rp35.000',
-                link: 'https://shopee.co.id/universal-link/Wardah-UV-Shield-Essential-Sunscreen-Gel-SPF-30-PA-40ml-i.146020867.22425761209',
-                image: wardahImageS,
-                compatibleSkinTypes: ['Normal', 'Dry'],
-                description: 'Sunscreen dengan ekstrak alami yang melembabkan.'
-            },
+     
         ],
     },
 ];
