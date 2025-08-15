@@ -5,6 +5,8 @@ import WardahNatureM from '../assets/Wardah_Nature_Daily_Aloe_Hydramild Moisturi
 import  WardahUv50 from '../assets/Wardah_UV_SPF_50_PA.jpg';
 import WardahFashwash from '../assets/Wardah_Lightening_Whip_Facial_Foam.jpeg'
 import WardahFashwash2 from '../assets/Wardah_Lightening_Whip_Facial_Foam.jpeg'
+import BubleChat from './BubleChat';
+
 
 const steps = [
     {
